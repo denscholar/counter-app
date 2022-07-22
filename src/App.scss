@@ -1,0 +1,69 @@
+.App {
+  text-align: center;
+
+
+  .counter-container{
+    background-color: black;
+    margin: 8rem auto;
+    padding: 2rem 0;
+    width: 22rem;
+    height: 13rem;
+
+    h2{
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    p{
+      font-size: 1.5rem;
+      border: 2px solid white;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin: 1.5rem auto;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 2rem;
+    }
+
+    .buttons_container{
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      button{
+        width: 6rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.3rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        svg{
+          margin: 0.2rem;
+        }
+
+        &:nth-child(1){
+          background: rgb(236, 19, 19);
+          color: white;
+        }
+        &:nth-child(2){
+          background: white;
+        }
+        &:nth-child(3){
+          background: rgb(41, 134, 41);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+

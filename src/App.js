@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import RemoveIcon from '@mui/icons-material/Remove';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import { useState } from 'react';
+import './App.scss';
+
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const handleSubtract =()=>{
+    setCount(count - 1)
+  }
+
+  const handleAdd =()=>{
+    setCount(count + 1)
+  }
+
+  const handleReset =()=>{
+    setCount(0);
+  }
+
+  let color = 'white';
+
+  if(count >= 10){
+    color = 'green';
+  }else if(count < 0){
+    color = 'red';
+  }else{
+    color = 'white';
+  }
+
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="App">
+      <div className='counter-container'>
+        <h2>Counter Application</h2>
+        <p style={{
+          color: color
+        }}>{count}</p>
+        <div className='buttons_container'>
+          <button onClick={handleSubtract}><RemoveIcon/>Subtract</button>
+          <button onClick={handleReset}><RestartAltIcon/>Reset</button>
+          <button onClick={handleAdd}><AddCircleIcon/>Add</button>
+        </div>
+      </div>
+    </section>
   );
 }
 
